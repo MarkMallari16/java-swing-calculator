@@ -51,13 +51,14 @@ public class CalculatorForm extends javax.swing.JFrame {
         btnMultipOp = new javax.swing.JButton();
         btnEqual = new javax.swing.JButton();
         btnAddOp = new javax.swing.JButton();
-        btnClear1 = new javax.swing.JButton();
+        btnRemoveNumber = new javax.swing.JButton();
         btnClear2 = new javax.swing.JButton();
         btnClear3 = new javax.swing.JButton();
         btnDivideOp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Calculator");
+        setResizable(false);
 
         txtFieldNumber.setEditable(false);
         txtFieldNumber.setFont(new java.awt.Font("Poppins Black", 1, 36)); // NOI18N
@@ -201,9 +202,14 @@ public class CalculatorForm extends javax.swing.JFrame {
             }
         });
 
-        btnClear1.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
-        btnClear1.setForeground(new java.awt.Color(102, 153, 255));
-        btnClear1.setText("C");
+        btnRemoveNumber.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
+        btnRemoveNumber.setForeground(new java.awt.Color(102, 153, 255));
+        btnRemoveNumber.setText("rm");
+        btnRemoveNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveNumberActionPerformed(evt);
+            }
+        });
 
         btnClear2.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
         btnClear2.setForeground(new java.awt.Color(102, 153, 255));
@@ -263,7 +269,7 @@ public class CalculatorForm extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnClear3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnClear1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(btnRemoveNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnMinusOp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,7 +286,7 @@ public class CalculatorForm extends javax.swing.JFrame {
                 .addComponent(txtFieldNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnClear1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRemoveNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDivideOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -415,7 +421,9 @@ public class CalculatorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDivideOpActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        currentInput = "0";
         txtFieldNumber.setText("0");
+
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnDotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDotActionPerformed
@@ -425,21 +433,41 @@ public class CalculatorForm extends javax.swing.JFrame {
     private void btnZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZeroActionPerformed
         handleNumbers("0");
     }//GEN-LAST:event_btnZeroActionPerformed
+
+    private void btnRemoveNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveNumberActionPerformed
+        String currentInp = txtFieldNumber.getText();
+
+        if (!currentInp.isEmpty()) {
+            try {
+                int num = Integer.parseInt(currentInp);
+                //this will remove the last digit
+                num /= 10;
+                currentInput = String.valueOf(num);
+                txtFieldNumber.setText(num == 0 ? "0" : currentInput);
+
+            } catch (NumberFormatException ex) {
+                txtFieldNumber.setText("0");
+            }
+        }
+
+    }//GEN-LAST:event_btnRemoveNumberActionPerformed
     private void handleNumbers(String numStr) {
-        if (isOperatorClicked) {
-            currentInput = "";
-            isOperatorClicked = false;
-        }
-        if (numStr.equals(".") && currentInput.contains(".")) {
-            return;
-        }
+        if (!currentInput.isEmpty()) {
+            if (isOperatorClicked) {
+                currentInput = "";
+                isOperatorClicked = false;
+            }
+            if (numStr.equals(".") && currentInput.contains(".")) {
+                return;
+            }
 
-        if (currentInput.equals("0") && !numStr.equals(".")) {
-            currentInput = "";
-        }
+            if (currentInput.equals("0") && !numStr.equals(".")) {
+                currentInput = "";
+            }
 
-        currentInput += numStr;
-        txtFieldNumber.setText(currentInput);
+            currentInput += numStr;
+            txtFieldNumber.setText(currentInput);
+        }
     }
 
     /**
@@ -480,7 +508,6 @@ public class CalculatorForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOp;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnClear1;
     private javax.swing.JButton btnClear2;
     private javax.swing.JButton btnClear3;
     private javax.swing.JButton btnDivideOp;
@@ -493,6 +520,7 @@ public class CalculatorForm extends javax.swing.JFrame {
     private javax.swing.JButton btnMultipOp;
     private javax.swing.JButton btnNine;
     private javax.swing.JButton btnOne;
+    private javax.swing.JButton btnRemoveNumber;
     private javax.swing.JButton btnSeven;
     private javax.swing.JButton btnSix;
     private javax.swing.JButton btnThree1;

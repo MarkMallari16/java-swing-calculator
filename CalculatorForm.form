@@ -73,7 +73,7 @@
                                   <Group type="102" attributes="0">
                                       <Component id="btnClear3" max="32767" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnClear1" min="-2" pref="153" max="-2" attributes="0"/>
+                                      <Component id="btnRemoveNumber" min="-2" pref="153" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -99,7 +99,7 @@
               <Component id="txtFieldNumber" min="-2" pref="76" max="-2" attributes="0"/>
               <EmptySpace pref="32" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnClear1" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="btnRemoveNumber" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnClear3" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnDivideOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnClear2" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
@@ -339,7 +339,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddOpActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnClear1">
+    <Component class="javax.swing.JButton" name="btnRemoveNumber">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Poppins Black" size="18" style="0"/>
@@ -347,8 +347,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="C"/>
+        <Property name="text" type="java.lang.String" value="rm"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveNumberActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnClear2">
       <Properties>
