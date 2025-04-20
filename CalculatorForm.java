@@ -4,6 +4,7 @@
  */
 package calculator;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
@@ -11,7 +12,7 @@ import javax.swing.JButton;
  * @author Mallari
  */
 public class CalculatorForm extends javax.swing.JFrame {
-
+    
     private String currentInput = "0";
     private boolean isOperatorClicked = false;
     private String operator = "";
@@ -22,6 +23,8 @@ public class CalculatorForm extends javax.swing.JFrame {
      */
     public CalculatorForm() {
         initComponents();
+        
+        btnBackSpace.setIcon(new ImageIcon("svg/backspace.svg"));
         txtFieldNumber.setText("0");
     }
 
@@ -51,7 +54,7 @@ public class CalculatorForm extends javax.swing.JFrame {
         btnMultipOp = new javax.swing.JButton();
         btnEqual = new javax.swing.JButton();
         btnAddOp = new javax.swing.JButton();
-        btnRemoveNumber = new javax.swing.JButton();
+        btnBackSpace = new javax.swing.JButton();
         btnClear2 = new javax.swing.JButton();
         btnClear3 = new javax.swing.JButton();
         btnDivideOp = new javax.swing.JButton();
@@ -64,8 +67,9 @@ public class CalculatorForm extends javax.swing.JFrame {
         txtFieldNumber.setFont(new java.awt.Font("Poppins Black", 1, 36)); // NOI18N
         txtFieldNumber.setForeground(new java.awt.Color(0, 0, 0));
         txtFieldNumber.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        txtFieldNumber.setCaretColor(new java.awt.Color(0, 0, 0));
-        txtFieldNumber.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        txtFieldNumber.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtFieldNumber.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtFieldNumber.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         txtFieldNumber.setEnabled(false);
         txtFieldNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,12 +206,11 @@ public class CalculatorForm extends javax.swing.JFrame {
             }
         });
 
-        btnRemoveNumber.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
-        btnRemoveNumber.setForeground(new java.awt.Color(102, 153, 255));
-        btnRemoveNumber.setText("rm");
-        btnRemoveNumber.addActionListener(new java.awt.event.ActionListener() {
+        btnBackSpace.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
+        btnBackSpace.setForeground(new java.awt.Color(102, 153, 255));
+        btnBackSpace.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRemoveNumberActionPerformed(evt);
+                btnBackSpaceActionPerformed(evt);
             }
         });
 
@@ -269,7 +272,7 @@ public class CalculatorForm extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnClear3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnRemoveNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(btnBackSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnMinusOp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,7 +289,7 @@ public class CalculatorForm extends javax.swing.JFrame {
                 .addComponent(txtFieldNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRemoveNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBackSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDivideOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClear2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -397,7 +400,7 @@ public class CalculatorForm extends javax.swing.JFrame {
                 result = firstNumber / secondNumber;
                 break;
         }
-
+        
         if (result == (long) result) {
             currentInput = String.valueOf((long) result);
         } else {
@@ -434,9 +437,9 @@ public class CalculatorForm extends javax.swing.JFrame {
         handleNumbers("0");
     }//GEN-LAST:event_btnZeroActionPerformed
 
-    private void btnRemoveNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveNumberActionPerformed
+    private void btnBackSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSpaceActionPerformed
         String currentInp = txtFieldNumber.getText();
-
+        
         if (!currentInp.isEmpty()) {
             try {
                 int num = Integer.parseInt(currentInp);
@@ -444,13 +447,13 @@ public class CalculatorForm extends javax.swing.JFrame {
                 num /= 10;
                 currentInput = String.valueOf(num);
                 txtFieldNumber.setText(num == 0 ? "0" : currentInput);
-
+                
             } catch (NumberFormatException ex) {
                 txtFieldNumber.setText("0");
             }
         }
 
-    }//GEN-LAST:event_btnRemoveNumberActionPerformed
+    }//GEN-LAST:event_btnBackSpaceActionPerformed
     private void handleNumbers(String numStr) {
         if (!currentInput.isEmpty()) {
             if (isOperatorClicked) {
@@ -460,11 +463,11 @@ public class CalculatorForm extends javax.swing.JFrame {
             if (numStr.equals(".") && currentInput.contains(".")) {
                 return;
             }
-
+            
             if (currentInput.equals("0") && !numStr.equals(".")) {
                 currentInput = "";
             }
-
+            
             currentInput += numStr;
             txtFieldNumber.setText(currentInput);
         }
@@ -507,6 +510,7 @@ public class CalculatorForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddOp;
+    private javax.swing.JButton btnBackSpace;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnClear2;
     private javax.swing.JButton btnClear3;
@@ -520,7 +524,6 @@ public class CalculatorForm extends javax.swing.JFrame {
     private javax.swing.JButton btnMultipOp;
     private javax.swing.JButton btnNine;
     private javax.swing.JButton btnOne;
-    private javax.swing.JButton btnRemoveNumber;
     private javax.swing.JButton btnSeven;
     private javax.swing.JButton btnSix;
     private javax.swing.JButton btnThree1;
