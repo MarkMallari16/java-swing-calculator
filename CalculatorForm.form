@@ -27,7 +27,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="txtFieldNumber" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
@@ -60,20 +60,20 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnOne" pref="147" max="32767" attributes="0"/>
-                                  <Component id="btnClear2" max="32767" attributes="0"/>
+                                  <Component id="btnOne" max="32767" attributes="0"/>
+                                  <Component id="btnClear2" min="-2" pref="147" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="btnTwo" max="32767" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="btnThree1" min="-2" pref="153" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="btnClear3" max="32767" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="btnBackSpace" min="-2" pref="153" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btnDivideOp" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -84,11 +84,10 @@
                           <Component id="btnMultipOp" min="-2" pref="65" max="-2" attributes="0"/>
                           <Component id="btnAddOp" min="-2" pref="65" max="-2" attributes="0"/>
                           <Component id="btnEqual" min="-2" pref="65" max="-2" attributes="0"/>
-                          <Component id="btnDivideOp" min="-2" pref="65" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -99,38 +98,41 @@
               <Component id="txtFieldNumber" min="-2" pref="76" max="-2" attributes="0"/>
               <EmptySpace pref="32" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnBackSpace" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnClear3" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnDivideOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="btnBackSpace" alignment="1" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnClear2" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="btnDivideOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="btnMultipOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnTwo" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnOne" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnThree1" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnMultipOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="btnMinusOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnFive" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnFour" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnSix" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnMinusOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnEight" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnSeven" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnNine" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
                   <Component id="btnAddOp" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnZero" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnDot" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnClear" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
-                  <Component id="btnEqual" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnEight" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="btnSeven" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="btnNine" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnZero" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="btnDot" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="btnClear" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="btnEqual" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
@@ -142,7 +144,7 @@
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Poppins Black" size="36" style="1"/>
+          <Font name="Poppins" size="36" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -169,6 +171,13 @@
           <Font name="Poppins Black" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="-"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true">
+              <Color PropertyName="color" blue="ff" green="99" red="66" type="rgb"/>
+            </LineBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMinusOpActionPerformed"/>
@@ -265,12 +274,12 @@
     <Component class="javax.swing.JButton" name="btnClear">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Poppins Black" size="18" style="0"/>
+          <Font name="Poppins" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="C"/>
+        <Property name="text" type="java.lang.String" value="AC"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
@@ -315,6 +324,13 @@
           <Font name="Poppins Black" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="X"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true">
+              <Color PropertyName="color" blue="ff" green="99" red="66" type="rgb"/>
+            </LineBorder>
+          </Border>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMultipOpActionPerformed"/>
@@ -322,6 +338,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEqual">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="99" red="66" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Poppins Black" size="18" style="0"/>
         </Property>
@@ -337,6 +356,14 @@
           <Font name="Poppins Black" size="18" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="+"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder roundedCorners="true">
+              <Color PropertyName="color" blue="ff" green="99" red="66" type="rgb"/>
+            </LineBorder>
+          </Border>
+        </Property>
+        <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddOpActionPerformed"/>
@@ -345,11 +372,12 @@
     <Component class="javax.swing.JButton" name="btnBackSpace">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Poppins Black" size="18" style="0"/>
+          <Font name="Poppins" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="66" type="rgb"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="C"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackSpaceActionPerformed"/>
@@ -358,23 +386,12 @@
     <Component class="javax.swing.JButton" name="btnClear2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Poppins Black" size="18" style="0"/>
+          <Font name="Poppins" size="18" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="99" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="C"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnClear3">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Poppins Black" size="18" style="0"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="99" red="66" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="C"/>
+        <Property name="text" type="java.lang.String" value="%"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnDivideOp">

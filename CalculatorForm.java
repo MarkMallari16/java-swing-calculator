@@ -12,7 +12,7 @@ import javax.swing.JButton;
  * @author Mallari
  */
 public class CalculatorForm extends javax.swing.JFrame {
-    
+
     private String currentInput = "0";
     private boolean isOperatorClicked = false;
     private String operator = "";
@@ -23,7 +23,7 @@ public class CalculatorForm extends javax.swing.JFrame {
      */
     public CalculatorForm() {
         initComponents();
-        
+
         btnBackSpace.setIcon(new ImageIcon("svg/backspace.svg"));
         txtFieldNumber.setText("0");
     }
@@ -56,7 +56,6 @@ public class CalculatorForm extends javax.swing.JFrame {
         btnAddOp = new javax.swing.JButton();
         btnBackSpace = new javax.swing.JButton();
         btnClear2 = new javax.swing.JButton();
-        btnClear3 = new javax.swing.JButton();
         btnDivideOp = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,7 +63,7 @@ public class CalculatorForm extends javax.swing.JFrame {
         setResizable(false);
 
         txtFieldNumber.setEditable(false);
-        txtFieldNumber.setFont(new java.awt.Font("Poppins Black", 1, 36)); // NOI18N
+        txtFieldNumber.setFont(new java.awt.Font("Poppins", 1, 36)); // NOI18N
         txtFieldNumber.setForeground(new java.awt.Color(0, 0, 0));
         txtFieldNumber.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtFieldNumber.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -79,6 +78,7 @@ public class CalculatorForm extends javax.swing.JFrame {
 
         btnMinusOp.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
         btnMinusOp.setText("-");
+        btnMinusOp.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 1, true));
         btnMinusOp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMinusOpActionPerformed(evt);
@@ -149,9 +149,9 @@ public class CalculatorForm extends javax.swing.JFrame {
             }
         });
 
-        btnClear.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
+        btnClear.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         btnClear.setForeground(new java.awt.Color(102, 153, 255));
-        btnClear.setText("C");
+        btnClear.setText("AC");
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
@@ -184,12 +184,14 @@ public class CalculatorForm extends javax.swing.JFrame {
 
         btnMultipOp.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
         btnMultipOp.setText("X");
+        btnMultipOp.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 1, true));
         btnMultipOp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMultipOpActionPerformed(evt);
             }
         });
 
+        btnEqual.setBackground(new java.awt.Color(102, 153, 255));
         btnEqual.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
         btnEqual.setText("=");
         btnEqual.addActionListener(new java.awt.event.ActionListener() {
@@ -200,27 +202,26 @@ public class CalculatorForm extends javax.swing.JFrame {
 
         btnAddOp.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
         btnAddOp.setText("+");
+        btnAddOp.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 153, 255), 1, true));
+        btnAddOp.setBorderPainted(false);
         btnAddOp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddOpActionPerformed(evt);
             }
         });
 
-        btnBackSpace.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
+        btnBackSpace.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         btnBackSpace.setForeground(new java.awt.Color(102, 153, 255));
+        btnBackSpace.setText("C");
         btnBackSpace.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackSpaceActionPerformed(evt);
             }
         });
 
-        btnClear2.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
+        btnClear2.setFont(new java.awt.Font("Poppins", 1, 18)); // NOI18N
         btnClear2.setForeground(new java.awt.Color(102, 153, 255));
-        btnClear2.setText("C");
-
-        btnClear3.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
-        btnClear3.setForeground(new java.awt.Color(102, 153, 255));
-        btnClear3.setText("C");
+        btnClear2.setText("%");
 
         btnDivideOp.setFont(new java.awt.Font("Poppins Black", 0, 18)); // NOI18N
         btnDivideOp.setText("/");
@@ -235,7 +236,7 @@ public class CalculatorForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtFieldNumber)
                     .addGroup(layout.createSequentialGroup()
@@ -261,26 +262,25 @@ public class CalculatorForm extends javax.swing.JFrame {
                                             .addComponent(btnNine, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnOne, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                    .addComponent(btnClear2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(btnOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnClear2, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btnThree1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnClear3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnBackSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(btnBackSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnDivideOp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnMinusOp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMultipOp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnAddOp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEqual, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDivideOp, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(30, 30, 30))
+                            .addComponent(btnEqual, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,33 +290,34 @@ public class CalculatorForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBackSpace, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClear3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClear2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDivideOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClear2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMultipOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnOne, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnThree1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMultipOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnMinusOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFive, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFour, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSix, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMinusOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEight, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNine, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddOp, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnEqual, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnEight, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSeven, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNine, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnZero, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnDot, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnEqual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(22, 22, 22))
         );
 
@@ -394,13 +395,13 @@ public class CalculatorForm extends javax.swing.JFrame {
                 break;
             case "/":
                 if (secondNumber == 0) {
-                    txtFieldNumber.setText("Error!");
+                    txtFieldNumber.setText("Syntax Error!");
                     return;
                 }
                 result = firstNumber / secondNumber;
                 break;
         }
-        
+
         if (result == (long) result) {
             currentInput = String.valueOf((long) result);
         } else {
@@ -439,18 +440,15 @@ public class CalculatorForm extends javax.swing.JFrame {
 
     private void btnBackSpaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackSpaceActionPerformed
         String currentInp = txtFieldNumber.getText();
-        
-        if (!currentInp.isEmpty()) {
-            try {
-                int num = Integer.parseInt(currentInp);
-                //this will remove the last digit
-                num /= 10;
-                currentInput = String.valueOf(num);
-                txtFieldNumber.setText(num == 0 ? "0" : currentInput);
-                
-            } catch (NumberFormatException ex) {
-                txtFieldNumber.setText("0");
+
+        if (!currentInp.isEmpty() && !currentInp.equals("0")) {
+            currentInp = currentInp.substring(0, currentInp.length() - 1);
+
+            if (currentInp.isEmpty() || currentInp.equals("-") || currentInp.equals(".")) {
+                currentInp = "0";
             }
+            txtFieldNumber.setText(currentInp);
+            currentInput = currentInp;
         }
 
     }//GEN-LAST:event_btnBackSpaceActionPerformed
@@ -463,11 +461,11 @@ public class CalculatorForm extends javax.swing.JFrame {
             if (numStr.equals(".") && currentInput.contains(".")) {
                 return;
             }
-            
+
             if (currentInput.equals("0") && !numStr.equals(".")) {
                 currentInput = "";
             }
-            
+
             currentInput += numStr;
             txtFieldNumber.setText(currentInput);
         }
@@ -513,7 +511,6 @@ public class CalculatorForm extends javax.swing.JFrame {
     private javax.swing.JButton btnBackSpace;
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnClear2;
-    private javax.swing.JButton btnClear3;
     private javax.swing.JButton btnDivideOp;
     private javax.swing.JButton btnDot;
     private javax.swing.JButton btnEight;
